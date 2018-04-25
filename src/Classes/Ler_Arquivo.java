@@ -4,13 +4,15 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Ler_Arquivo {
     
     
    
-    void arquivocsv(){
+    public void lerarquivocsv(){
         
         File arquivoCSV = new File(getClass().getResource("arquivo.csv").getFile());
         
@@ -18,15 +20,21 @@ public class Ler_Arquivo {
             
             String linhasarquivo = new String();
             
+            ArrayList<String> Listateste = new ArrayList<String>();
+            
             Scanner leitor = new Scanner(arquivoCSV);
             
-            leitor.nextLine();
+            //leitor.nextLine();
             
-            while(leitor.hasNext()){
-                linhasarquivo = leitor.nextLine();
+            while(leitor.hasNextLine()){
+                //linhasarquivo = leitor.nextLine();
                 
-                System.out.println(linhasarquivo);
+                Listateste.add(leitor.nextLine());
+                
+                //System.out.println(Listateste);
             }
+            
+            System.out.println(Listateste);
             
         } catch(FileNotFoundException e){
             

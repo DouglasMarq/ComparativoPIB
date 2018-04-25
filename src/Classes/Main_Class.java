@@ -9,7 +9,7 @@ public class Main_Class {
                
         //instancia e chama a classe para ler o arquivo -- utilizado para testes
         Ler_Arquivo lerCSV = new Ler_Arquivo();
-        lerCSV.arquivocsv();
+        lerCSV.lerarquivocsv();
         
         //Cria a janela Main_Window
         Main_Window JanelaPrincipal = new Main_Window();
