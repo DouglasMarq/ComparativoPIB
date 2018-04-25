@@ -7,38 +7,33 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Ler_Arquivo {
     
+    //cria a arraylist
+    public ArrayList<String> ListaCSV = new ArrayList<String>();
+    private int i;
     
-   
+    //transfere essa arraylist para a outra classe
+    public ArrayList<String> getdados(){
+        return ListaCSV;
+    }
+    
     public void lerarquivocsv(){
-        
+        //abre o arquivo no mesmo diretorio/cria o arquivo
         File arquivoCSV = new File(getClass().getResource("arquivo.csv").getFile());
-        
+
         try{
-            
-            String linhasarquivo = new String();
-            
-            ArrayList<String> Listateste = new ArrayList<String>();
-            
+            //cria scanner para ler arquivo
             Scanner leitor = new Scanner(arquivoCSV);
             
-            //leitor.nextLine();
-            
+            //adiciona as linhas do arquivo CSV para a arraylist
             while(leitor.hasNextLine()){
-                //linhasarquivo = leitor.nextLine();
-                
-                Listateste.add(leitor.nextLine());
-                
-                //System.out.println(Listateste);
+                ListaCSV.add(leitor.nextLine());
             }
-            
-            System.out.println(Listateste);
-            
-        } catch(FileNotFoundException e){
-            
+        } catch(FileNotFoundException e) {
+            JOptionPane.showMessageDialog(null, "Não foi encontrado o arquivo na pasta raiz do programa.");
         }
-        
     }
 }
