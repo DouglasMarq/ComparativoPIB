@@ -7,13 +7,29 @@ package UI;
 
 import Classes.*;
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 public class ArrayListShow extends javax.swing.JFrame {
 
+    Ler_Arquivo c1 = new Ler_Arquivo();
+    ArrayList<String> ListaTeste = c1.getdados2();
     private int i;
     
     public ArrayListShow() {
         initComponents();
+        ArrayParaTabela();
+    }
+    
+    
+    public void ArrayParaTabela(){
+        c1.lerpib();
+        Object Data = new Object();
+        //String[] col = {"Páis","Moeda Utilizada Dados","Produto Interno Bruto"};
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        for(i=0; i<ListaTeste.size();i++){
+            String[] addTabela = ListaTeste.get(i).split(";");
+            model.addRow(addTabela);
+        }
     }
 
     /**
@@ -26,27 +42,40 @@ public class ArrayListShow extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        MostrarDadosBtn = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        DadosTxtArea = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Listagem de Dados");
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        MostrarDadosBtn.setText("Mostrar Dados");
-        MostrarDadosBtn.setContentAreaFilled(false);
-        MostrarDadosBtn.setFocusPainted(false);
-        MostrarDadosBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MostrarDadosBtnActionPerformed(evt);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
             }
         });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        DadosTxtArea.setEditable(false);
-        DadosTxtArea.setColumns(20);
-        DadosTxtArea.setRows(5);
-        jScrollPane1.setViewportView(DadosTxtArea);
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "País", "Moeda Utilizado Dados", "Produto Interno Bruto"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setResizable(false);
+            jTable1.getColumnModel().getColumn(1).setResizable(false);
+            jTable1.getColumnModel().getColumn(2).setResizable(false);
+        }
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -54,22 +83,15 @@ public class ArrayListShow extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(MostrarDadosBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 698, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 830, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addComponent(MostrarDadosBtn))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 448, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 470));
@@ -77,23 +99,9 @@ public class ArrayListShow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void MostrarDadosBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarDadosBtnActionPerformed
-        //instancia a classe Ler_Arquivo e pega a ArrayList de lá
-        Ler_Arquivo lerCSV = new Ler_Arquivo();
-        lerCSV.lerarquivocsv();
-        ArrayList<String> ListaDados = lerCSV.getdados();
-         
-        //Limpa a TxtArea caso o botão seja clicado 2x sem querer e coloca os 2 dados abaixo
-        DadosTxtArea.setText("");
-        //DadosTxtArea.append("Dados de 2016:\n\n");
-        //DadosTxtArea.append("Pais -- População Total -- População Homem -- População Mulher -- PIB Total -- Entrada Turistas\n\n");
-        
-        //Coloca os dados da arraylist
-        for(i=0; i<ListaDados.size();i++){
-            DadosTxtArea.append(ListaDados.get(i) + "\n");
-        }
-        
-    }//GEN-LAST:event_MostrarDadosBtnActionPerformed
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -131,9 +139,8 @@ public class ArrayListShow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea DadosTxtArea;
-    private javax.swing.JButton MostrarDadosBtn;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

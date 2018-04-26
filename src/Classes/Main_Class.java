@@ -7,10 +7,9 @@ public class Main_Class {
 
     public static void main(String[] args) {
         
-        //inicializa a leitura do arquivo e já prepara a lista 1 e 2
+        //inicializa a leitura do arquivo e já prepara a lista 1, 2 e 3
         Ler_Arquivo c1 = new Ler_Arquivo();
-        c1.lerarquivocsv();
-        
+        c1.lerpib();
         
         //Cria a janela Main_Window e coloca ela na posição 750x350
         Main_Window JanelaPrincipal = new Main_Window();

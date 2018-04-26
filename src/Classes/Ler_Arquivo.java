@@ -14,6 +14,8 @@ public class Ler_Arquivo {
     //cria a arraylist
     public ArrayList<String> ListaCSV = new ArrayList<String>();
     public ArrayList<String> ListaCSV2 = new ArrayList<String>();
+    public ArrayList<String> ListaCSV3 = new ArrayList<String>();
+    public ArrayList<String> ListaCSV4 = new ArrayList<String>();
     private long SomaPib;
     private int i;
     
@@ -22,6 +24,10 @@ public class Ler_Arquivo {
         return ListaCSV2;
     }
     
+    public ArrayList<String> getdados2(){
+        return ListaCSV;
+    }
+  
     public void lerarquivocsv(){
         //abre o arquivo no mesmo diretorio/cria o arquivo
         File arquivoCSV = new File(getClass().getResource("PIB.csv").getFile());
@@ -45,7 +51,7 @@ public class Ler_Arquivo {
     
     public void lerpib(){
         //abre o arquivo no mesmo diretorio/cria o arquivo
-        File arquivoCSV = new File(getClass().getResource("arquivo.csv").getFile());
+        File arquivoCSV = new File(getClass().getResource("PIB.csv").getFile());
 
         try{
             //cria scanner para ler arquivo
@@ -60,8 +66,8 @@ public class Ler_Arquivo {
         }
         
         for (i=0; i < ListaCSV.size();i++){
-            ListaCSV2.add(ListaCSV.get(i).replace(";", " - "));
-            System.out.println(ListaCSV2.get(i));
+            String[] separator = ListaCSV.get(i).split(";");
+            //System.out.println(ListaCSV4.get(i));
         }
     }
     
