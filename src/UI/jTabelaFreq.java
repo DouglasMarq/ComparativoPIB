@@ -16,7 +16,11 @@ import javax.swing.table.DefaultTableModel;
 public class jTabelaFreq extends javax.swing.JFrame {
 
     Ler_Arquivo c1 = new Ler_Arquivo();
-    ArrayList<String> ListaTeste = c1.getdados3();
+    TabelaFrequencia c2 = new TabelaFrequencia();
+    public ArrayList<String> ListaPaisMoeda = c1.getdados3();
+    ArrayList<String> Fi = c2.getFi();   
+    ArrayList<String> FacTab = c2.getFac();
+    
     private int i;
     
     public jTabelaFreq() {
@@ -28,12 +32,31 @@ public class jTabelaFreq extends javax.swing.JFrame {
     public void ArrayParaTabela(){
         jTable1.getColumnModel().getColumn(0).setMinWidth(80);
         jTable1.getColumnModel().getColumn(1).setMinWidth(120);
+        jTable1.getColumnModel().getColumn(2).setMinWidth(5);
+        jTable1.getColumnModel().getColumn(3).setMinWidth(120);
+        
         c1.lerpibtabela();
-        Object Data = new Object();
+        c2.Fi();
+        c2.Fac();
+
+        Object Data[] = new Object[11];
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        for(i=0; i<ListaTeste.size();i++){
-            String[] addTabela = ListaTeste.get(i).split(";");
-            model.addRow(addTabela);
+        for(i=0; i<50;i++){
+            String[] addTabela = ListaPaisMoeda.get(i).split(";");
+            Data[0] = addTabela[0];
+            Data[1] = addTabela[1];
+            Data[2] = Fi.get(i);
+            Data[3] = addTabela[1];
+            Data[4] = FacTab.get(i);
+            model.addRow(Data);
+        }
+        for(i=0;i<1;i++){
+            Data[0] = "";
+            Data[1] = "";
+            Data[2] = Fi.get(51);
+            Data[3] = "";
+            Data[4] = "";
+            model.addRow(Data);
         }
     }
 

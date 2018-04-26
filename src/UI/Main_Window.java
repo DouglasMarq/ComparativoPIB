@@ -11,9 +11,9 @@ package UI;
  */
 public class Main_Window extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Main_Window
-     */
+    ArrayListShow c1 = new ArrayListShow();
+    jTabelaFreq c2 = new jTabelaFreq();
+                
     public Main_Window() {
         initComponents();
     }
@@ -81,13 +81,11 @@ public class Main_Window extends javax.swing.JFrame {
 
     private void ListarDadosBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListarDadosBtnActionPerformed
         //instancia a janela ArrayListShow e coloca ela na posição da tela 550x300
-        ArrayListShow c1 = new ArrayListShow();
         c1.setLocation(550, 300);
         c1.setVisible(true);
     }//GEN-LAST:event_ListarDadosBtnActionPerformed
 
     private void TabelaFreqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TabelaFreqBtnActionPerformed
-        jTabelaFreq c2 = new jTabelaFreq();
         c2.setLocation(550,300);
         c2.setVisible(true);
     }//GEN-LAST:event_TabelaFreqBtnActionPerformed
