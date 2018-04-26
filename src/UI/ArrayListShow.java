@@ -80,7 +80,7 @@ public class ArrayListShow extends javax.swing.JFrame {
     private void MostrarDadosBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarDadosBtnActionPerformed
         //instancia a classe Ler_Arquivo e pega a ArrayList de lá
         Ler_Arquivo lerCSV = new Ler_Arquivo();
-        lerCSV.lerpib();
+        lerCSV.lerarquivocsv();
         ArrayList<String> ListaDados = lerCSV.getdados();
          
         //Limpa a TxtArea caso o botão seja clicado 2x sem querer e coloca os 2 dados abaixo
