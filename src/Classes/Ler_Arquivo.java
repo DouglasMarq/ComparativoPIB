@@ -19,7 +19,9 @@ public class Ler_Arquivo {
     public ArrayList<String> ListaCSV5 = new ArrayList<String>();
     private long SomaPib;
     private int i;
-    private String Adding;
+    private String MedianaPib;
+    private long MediaPib;
+    Double[] variancia = new Double[70];
     
     //transfere essa arraylist para a outra classe
     public ArrayList<String> getdados(){
@@ -79,12 +81,12 @@ public class Ler_Arquivo {
     
     public void somapib(){
         //abre o arquivo no mesmo diretorio/cria o arquivo
-        File arquivoCSV = new File(getClass().getResource("PIB.csv").getFile());
+        File arquivoCSV = new File(getClass().getResource("arquivo.csv").getFile());
 
         try{
             //cria scanner para ler arquivo
             Scanner leitor = new Scanner(arquivoCSV);
-            
+
             //adiciona as linhas do arquivo CSV para a arraylist
             while(leitor.hasNextLine()){
                 ListaCSV.add(leitor.nextLine());
@@ -92,11 +94,25 @@ public class Ler_Arquivo {
         } catch(FileNotFoundException e) {
             JOptionPane.showMessageDialog(null, "Não foi encontrado o arquivo na pasta raiz do programa.");
         }
-        
-        for(i=0; i < ListaCSV.size();i++){
+      /*for(i=0; i < ListaCSV.size();i++){
             String[] soma = ListaCSV.get(i).split(";");
-            SomaPib = Long.parseLong(soma[2]) + SomaPib;
+            SomaPib = Long.parseLong(soma[0]) + SomaPib;
         }
+      
+      //mediapib
+      MediaPib = SomaPib/50;  
+      System.out.println("Media = " + MediaPib);
+        
+      for(i=0;i<ListaCSV.size();i++){
+          String[] soma2 = ListaCSV.get(i).split(";");
+          variancia[i] =  Math.pow((Double.parseDouble(soma2[0]) - MediaPib),2) / (50 - 1);
+          System.out.println(String.valueOf(variancia[i]));
+      }
+        //x-x/²
+        //medianapib
+        MedianaPib = ListaCSV.get(25);
+        System.out.println("Mediana = " + MedianaPib);*/
+        
     }
     
     public void lerpibtabela(){
