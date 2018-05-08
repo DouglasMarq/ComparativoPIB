@@ -6,6 +6,7 @@
 package UI;
 
 import Classes.*;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
@@ -20,6 +21,7 @@ public class jTabelaFreq extends javax.swing.JFrame {
     public ArrayList<String> ListaPaisMoeda = c1.getdados3();
     ArrayList<String> Fi = c2.getFi();   
     ArrayList<String> FacTab = c2.getFac();
+    NumberFormat nf = NumberFormat.getInstance();
     
     private int i;
     
@@ -44,9 +46,9 @@ public class jTabelaFreq extends javax.swing.JFrame {
         for(i=0; i<50;i++){
             String[] addTabela = ListaPaisMoeda.get(i).split(";");
             Data[0] = addTabela[0];
-            Data[1] = addTabela[1];
+            Data[1] = addTabela[2];
             Data[2] = Fi.get(i);
-            Data[3] = addTabela[1];
+            Data[3] = addTabela[2];
             Data[4] = FacTab.get(i);
             model.addRow(Data);
         }

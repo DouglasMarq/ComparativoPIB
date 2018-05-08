@@ -21,7 +21,7 @@ public class Ler_Arquivo {
     private int i;
     private String MedianaPib;
     private long MediaPib;
-    Double[] variancia = new Double[70];
+    Double[] variancia = new Double[50];
     
     //transfere essa arraylist para a outra classe
     public ArrayList<String> getdados(){
@@ -38,7 +38,7 @@ public class Ler_Arquivo {
     
     public void lerarquivocsv(){
         //abre o arquivo no mesmo diretorio/cria o arquivo
-        File arquivoCSV = new File(getClass().getResource("PIB.csv").getFile());
+        File arquivoCSV = new File(getClass().getResource("PIB(1).csv").getFile());
 
         try{
             //cria scanner para ler arquivo
@@ -59,7 +59,7 @@ public class Ler_Arquivo {
     
     public void lerpib(){
         //abre o arquivo no mesmo diretorio/cria o arquivo
-        File arquivoCSV = new File(getClass().getResource("PIB.csv").getFile());
+        File arquivoCSV = new File(getClass().getResource("PIB(1).csv").getFile());
 
         try{
             //cria scanner para ler arquivo
@@ -81,7 +81,7 @@ public class Ler_Arquivo {
     
     public void somapib(){
         //abre o arquivo no mesmo diretorio/cria o arquivo
-        File arquivoCSV = new File(getClass().getResource("arquivo.csv").getFile());
+        File arquivoCSV = new File(getClass().getResource("PIB.csv").getFile());
 
         try{
             //cria scanner para ler arquivo
@@ -94,7 +94,9 @@ public class Ler_Arquivo {
         } catch(FileNotFoundException e) {
             JOptionPane.showMessageDialog(null, "Não foi encontrado o arquivo na pasta raiz do programa.");
         }
-      /*for(i=0; i < ListaCSV.size();i++){
+     
+        
+        /*for(i=0; i < ListaCSV.size();i++){
             String[] soma = ListaCSV.get(i).split(";");
             SomaPib = Long.parseLong(soma[0]) + SomaPib;
         }
@@ -117,7 +119,7 @@ public class Ler_Arquivo {
     
     public void lerpibtabela(){
         //abre o arquivo no mesmo diretorio/cria o arquivo
-        File arquivoCSV = new File(getClass().getResource("arquivo2.csv").getFile());
+        File arquivoCSV = new File(getClass().getResource("PIB(1).csv").getFile());
 
         try{
             //cria scanner para ler arquivo
