@@ -61,7 +61,6 @@ public class TabelaFrequencia {
            FracArray.add(FrDados[i]);
            } else {
            FracArray.add(FrDados[i] + FracArray.get(i));
-           System.out.println(String.valueOf(FracArray.get(i)));
            }
        }
    }
