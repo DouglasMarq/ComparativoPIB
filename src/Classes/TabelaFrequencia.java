@@ -5,12 +5,14 @@ import UI.jTabelaFreq;
 
 public class TabelaFrequencia {
 
-    public ArrayList<String> FiArray = new ArrayList<String>();
-    public ArrayList<String> FacArray = new ArrayList<String>();
-    public ArrayList<String> FRArray = new ArrayList<String>();
-                      
+    private ArrayList<String> FiArray = new ArrayList<String>();
+    private ArrayList<String> FacArray = new ArrayList<String>();
+    private ArrayList<Float> FRArray = new ArrayList<Float>();  
+    private float[] FrDados = new float[51];
+    private ArrayList<Float>FracArray = new ArrayList<Float>();
     private int i;
-    private Long FloatDiv;
+    private float ensurement = 2;
+    private float FloatDiv;
     
     public ArrayList<String> getFi(){
         return FiArray;
@@ -20,8 +22,12 @@ public class TabelaFrequencia {
         return FacArray;
     }
     
-    public ArrayList<String> getFr(){
-        return FRArray;
+    public float[] getFr(){
+        return FrDados;
+    }
+    
+    public ArrayList<Float> getFrac(){
+        return FracArray;
     }
     
     public void Fi(){
@@ -37,11 +43,26 @@ public class TabelaFrequencia {
         }
     }
     
-   /*public void FR(){
+   public void Fr(){
+        Fi();
         for(i=0;i<51;i++){
-            FRArray.add("1");
-            FloatDiv = Long.parseLong(FRArray.get(i)) + FloatDiv;
-            System.out.println(FloatDiv);
+            FRArray.add(Float.parseFloat(FiArray.get(i)));
+            FloatDiv = FRArray.get(i) / Float.parseFloat(FiArray.get(51));
+            FloatDiv *= 100;
+            FrDados[i] = FloatDiv;
         }
-    }*/
+    }
+   public void Frac(){
+       Fr();
+       FracArray.clear();
+       FracArray.add(ensurement);
+       for(i=0;i<50;i++){
+           if(FracArray.get(0) <= 0){
+           FracArray.add(FrDados[i]);
+           } else {
+           FracArray.add(FrDados[i] + FracArray.get(i));
+           System.out.println(String.valueOf(FracArray.get(i)));
+           }
+       }
+   }
 }

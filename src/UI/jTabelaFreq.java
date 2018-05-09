@@ -18,9 +18,11 @@ public class jTabelaFreq extends javax.swing.JFrame {
 
     Ler_Arquivo c1 = new Ler_Arquivo();
     TabelaFrequencia c2 = new TabelaFrequencia();
-    public ArrayList<String> ListaPaisMoeda = c1.getdados3();
-    ArrayList<String> Fi = c2.getFi();   
-    ArrayList<String> FacTab = c2.getFac();
+    private ArrayList<String> ListaPaisMoeda = c1.getdados3();
+    private ArrayList<String> Fi = c2.getFi();   
+    private ArrayList<String> FacTab = c2.getFac();
+    private ArrayList<Float> FracTab = c2.getFrac();
+    float[] FrTab = c2.getFr();
     NumberFormat nf = NumberFormat.getInstance();
     
     private int i;
@@ -40,6 +42,9 @@ public class jTabelaFreq extends javax.swing.JFrame {
         c1.lerpibtabela();
         c2.Fi();
         c2.Fac();
+        c2.Fr();
+        c2.Fac();
+        c2.Frac();
 
         Object Data[] = new Object[11];
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
@@ -50,6 +55,8 @@ public class jTabelaFreq extends javax.swing.JFrame {
             Data[2] = Fi.get(i);
             Data[3] = addTabela[2];
             Data[4] = FacTab.get(i);
+            Data[5] = FrTab[i];
+            Data[6] = FracTab.get(i);
             model.addRow(Data);
         }
         for(i=0;i<1;i++){
@@ -58,6 +65,8 @@ public class jTabelaFreq extends javax.swing.JFrame {
             Data[2] = Fi.get(51);
             Data[3] = "";
             Data[4] = "";
+            Data[5] = "100%";
+            Data[6] = "";
             model.addRow(Data);
         }
     }

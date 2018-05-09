@@ -32,7 +32,7 @@ public class Main_Window extends javax.swing.JFrame {
         TabelaFreqBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Sequelinha Analytics");
+        setTitle("ComparativoPIB");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ListarDadosBtn.setText("Listagem de Dados");

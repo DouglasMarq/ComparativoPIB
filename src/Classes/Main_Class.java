@@ -13,6 +13,7 @@ public class Main_Class {
         Formulas c3 = new Formulas();
         
         c3.desviopadrao();
+        c2.Frac();
         
         //Cria a janela Main_Window e coloca ela na posição 750x350
         Main_Window JanelaPrincipal = new Main_Window();
