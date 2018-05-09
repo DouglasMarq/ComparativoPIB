@@ -57,6 +57,9 @@ public class jTabelaFreq extends javax.swing.JFrame {
             Data[4] = FacTab.get(i);
             Data[5] = FrTab[i];
             Data[6] = FracTab.get(i);
+            Data[7] = "Não há";
+            Data[8] = "Não há";
+            Data[9] = "Não há";
             model.addRow(Data);
         }
         for(i=0;i<1;i++){
@@ -67,6 +70,9 @@ public class jTabelaFreq extends javax.swing.JFrame {
             Data[4] = "";
             Data[5] = "100%";
             Data[6] = "";
+            Data[7] = "";
+            Data[8] = "";
+            Data[9] = "";
             model.addRow(Data);
         }
     }
