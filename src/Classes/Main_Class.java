@@ -12,8 +12,11 @@ public class Main_Class {
         TabelaFrequencia c2 = new TabelaFrequencia();
         Formulas c3 = new Formulas();
         
-        c3.desviopadrao();
-        c2.Frac();
+        c3.Desviopadrao();
+        //c3.Medias();
+        //c2.Frac();
+        c3.Variancia();
+        c1.lerpib();
         
         //Cria a janela Main_Window e coloca ela na posição 750x350
         Main_Window JanelaPrincipal = new Main_Window();

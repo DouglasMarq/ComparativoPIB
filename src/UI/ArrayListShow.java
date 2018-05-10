@@ -6,28 +6,33 @@
 package UI;
 
 import Classes.*;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
 public class ArrayListShow extends javax.swing.JFrame {
 
     Ler_Arquivo c1 = new Ler_Arquivo();
-    ArrayList<String> ListaTeste = c1.getdados2();
+    private ArrayList<String> ListaCSV = c1.getdados2();
+    private ArrayList<String> ListaCSV2 = c1.getdados4();
     private int i;
+    NumberFormat nf = NumberFormat.getInstance();
     
     public ArrayListShow() {
         initComponents();
         ArrayParaTabela();
     }
     
-    
     public void ArrayParaTabela(){
         c1.lerpib();
-        Object Data = new Object();
+        Object Data[] = new Object[3];
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        for(i=0; i<ListaTeste.size();i++){
-            String[] addTabela = ListaTeste.get(i).split(";");
-            model.addRow(addTabela);
+        for(i=0; i<ListaCSV.size();i++){
+            String[] addTabela = ListaCSV.get(i).split(";");
+            Data[0] = addTabela[0];
+            Data[1] = addTabela[1];
+            Data[2] = nf.format(Double.parseDouble(ListaCSV2.get(i)));
+            model.addRow(Data);
         }
     }
 
