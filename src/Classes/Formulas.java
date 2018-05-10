@@ -19,10 +19,6 @@ public class Formulas {
     private double desviodouble;
     NumberFormat nf = NumberFormat.getInstance();
     
-    /*public double getMediaPib(){
-        return MediaPib;
-    }*/
-    
     public void Medias(){
       //mediapib
       c1.lerarquivocsv();
