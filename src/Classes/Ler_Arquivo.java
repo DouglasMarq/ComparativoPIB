@@ -13,8 +13,6 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 public class Ler_Arquivo {
-    
-    //cria a arraylist
     private ArrayList<String> ListaCSV = new ArrayList<String>();
     private ArrayList<String> ListaCSV2 = new ArrayList<String>();
     private ArrayList<String> ListaCSV3 = new ArrayList<String>();
@@ -29,19 +27,19 @@ public class Ler_Arquivo {
     public ArrayList<String> getdados(){
         return ListaCSV2;
     }
-    
+    //transfere essa arraylist para a outra classe
     public ArrayList<String> getdados2(){
         return ListaCSV;
     }
-    
+    //transfere essa arraylist para a outra classe
     public ArrayList<String> getdados4(){
         return ListaCSV4;
     }
-    
+    //transfere essa arraylist para a outra classe
     public ArrayList<String> getdados3(){
         return ListaCSV5;
     }
-    
+    //transfere essa arraylist para a outra classe
     public String[] getlervalor(){
         return lervalor.clone();
     }
@@ -50,13 +48,13 @@ public class Ler_Arquivo {
         //abre o arquivo no mesmo diretorio/cria o arquivo
         ListaCSV.clear();
         File arquivoCSV = new File(getClass().getResource("PIB.csv").getFile());
-
+        //Tenta ler o arquivo e capturar algum erro
         try{
             //cria scanner para ler arquivo
             Scanner leitor = new Scanner(arquivoCSV);
-            
             //adiciona as linhas do arquivo CSV para a arraylist
             while(leitor.hasNextLine()){
+                //Adiciona proxima linha a lista
                 ListaCSV.add(leitor.nextLine());
             }
         } catch(FileNotFoundException e) {
@@ -71,13 +69,13 @@ public class Ler_Arquivo {
     public void lerpib(){
         //abre o arquivo no mesmo diretorio/cria o arquivo
         File arquivoCSV = new File(getClass().getResource("PIB.csv").getFile());
-
+        //Tenta ler o arquivo e capturar algum erro
         try{
             //cria scanner para ler arquivo
             Scanner leitor = new Scanner(arquivoCSV);
-            
             //adiciona as linhas do arquivo CSV para a arraylist
             while(leitor.hasNextLine()){
+                //Adiciona proxima linha a lista
                 ListaCSV.add(leitor.nextLine());
             }
         } catch(FileNotFoundException e) {
@@ -95,13 +93,13 @@ public class Ler_Arquivo {
     public void lerpibtabela(){
         //abre o arquivo no mesmo diretorio/cria o arquivo
         File arquivoCSV = new File(getClass().getResource("PIB(1).csv").getFile());
-
+        //Tenta ler o arquivo e capturar algum erro
         try{
             //cria scanner para ler arquivo
             Scanner leitor = new Scanner(arquivoCSV);
-            
             //adiciona as linhas do arquivo CSV para a arraylist
             while(leitor.hasNextLine()){
+                //Adiciona proxima linha a lista
                 ListaCSV5.add(leitor.nextLine());
             }
         } catch(FileNotFoundException e) {

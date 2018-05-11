@@ -41,6 +41,8 @@
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="ListarDadosBtn" max="32767" attributes="0"/>
                       <Component id="TabelaFreqBtn" max="32767" attributes="0"/>
+                      <Component id="GraficoBarraBtn" max="32767" attributes="0"/>
+                      <Component id="GraficoTortaBtn" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="258" max="32767" attributes="0"/>
               </Group>
@@ -53,7 +55,11 @@
                   <Component id="ListarDadosBtn" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="TabelaFreqBtn" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="234" max="32767" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="GraficoBarraBtn" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="GraficoTortaBtn" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="168" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -77,6 +83,26 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TabelaFreqBtnActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="GraficoBarraBtn">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Grafico em Barra"/>
+            <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="focusPainted" type="boolean" value="false"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GraficoBarraBtnActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="GraficoTortaBtn">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Grafico em Torta"/>
+            <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="focusPainted" type="boolean" value="false"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GraficoTortaBtnActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

@@ -20,18 +20,25 @@ public class ArrayListShow extends javax.swing.JFrame {
     
     public ArrayListShow() {
         initComponents();
+        //Inicializa os dados para a tabela
         ArrayParaTabela();
     }
     
     public void ArrayParaTabela(){
         c1.lerpib();
+        //Cria objeto vetor Data
         Object Data[] = new Object[3];
+        //Cria o modelo da tabela
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         for(i=0; i<ListaCSV.size();i++){
             String[] addTabela = ListaCSV.get(i).split(";");
+            //Adiciona a coluna 1 os paises
             Data[0] = addTabela[0];
+            //Adiciona a coluna 2 a moeda utilizada
             Data[1] = addTabela[1];
+            //Adiciona a coluna 3 o PIB
             Data[2] = nf.format(Double.parseDouble(ListaCSV2.get(i)));
+            //Coloca na tabela
             model.addRow(Data);
         }
     }
@@ -56,7 +63,6 @@ public class ArrayListShow extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -88,18 +94,18 @@ public class ArrayListShow extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 830, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 865, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 448, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 470));
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

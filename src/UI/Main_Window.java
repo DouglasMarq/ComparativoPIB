@@ -13,6 +13,8 @@ public class Main_Window extends javax.swing.JFrame {
 
     ArrayListShow c1 = new ArrayListShow();
     jTabelaFreq c2 = new jTabelaFreq();
+    GraficoBarra c3 = new GraficoBarra();
+    GraficoTorta c4 = new GraficoTorta();
                 
     public Main_Window() {
         initComponents();
@@ -30,6 +32,8 @@ public class Main_Window extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         ListarDadosBtn = new javax.swing.JButton();
         TabelaFreqBtn = new javax.swing.JButton();
+        GraficoBarraBtn = new javax.swing.JButton();
+        GraficoTortaBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ComparativoPIB");
@@ -53,6 +57,24 @@ public class Main_Window extends javax.swing.JFrame {
             }
         });
 
+        GraficoBarraBtn.setText("Grafico em Barra");
+        GraficoBarraBtn.setContentAreaFilled(false);
+        GraficoBarraBtn.setFocusPainted(false);
+        GraficoBarraBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GraficoBarraBtnActionPerformed(evt);
+            }
+        });
+
+        GraficoTortaBtn.setText("Grafico em Torta");
+        GraficoTortaBtn.setContentAreaFilled(false);
+        GraficoTortaBtn.setFocusPainted(false);
+        GraficoTortaBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GraficoTortaBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -61,7 +83,9 @@ public class Main_Window extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(ListarDadosBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(TabelaFreqBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(TabelaFreqBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(GraficoBarraBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(GraficoTortaBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(258, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -71,7 +95,11 @@ public class Main_Window extends javax.swing.JFrame {
                 .addComponent(ListarDadosBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(TabelaFreqBtn)
-                .addContainerGap(234, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(GraficoBarraBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(GraficoTortaBtn)
+                .addContainerGap(168, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 300));
@@ -89,6 +117,16 @@ public class Main_Window extends javax.swing.JFrame {
         c2.setLocation(550,300);
         c2.setVisible(true);
     }//GEN-LAST:event_TabelaFreqBtnActionPerformed
+
+    private void GraficoBarraBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GraficoBarraBtnActionPerformed
+        c3.setLocation(550,300);
+        c3.setVisible(true);
+    }//GEN-LAST:event_GraficoBarraBtnActionPerformed
+
+    private void GraficoTortaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GraficoTortaBtnActionPerformed
+        c4.setLocation(550,300);
+        c4.setVisible(true);
+    }//GEN-LAST:event_GraficoTortaBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -126,6 +164,8 @@ public class Main_Window extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton GraficoBarraBtn;
+    private javax.swing.JButton GraficoTortaBtn;
     private javax.swing.JButton ListarDadosBtn;
     private javax.swing.JButton TabelaFreqBtn;
     private javax.swing.JPanel jPanel1;
