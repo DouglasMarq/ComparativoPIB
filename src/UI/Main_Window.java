@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package UI;
 
 /**
@@ -11,6 +6,7 @@ package UI;
  */
 public class Main_Window extends javax.swing.JFrame {
 
+    //Instancia as janelas para poder serem criadas
     ArrayListShow c1 = new ArrayListShow();
     jTabelaFreq c2 = new jTabelaFreq();
     GraficoBarra c3 = new GraficoBarra();
@@ -86,7 +82,7 @@ public class Main_Window extends javax.swing.JFrame {
                     .addComponent(TabelaFreqBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(GraficoBarraBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(GraficoTortaBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(258, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,32 +95,31 @@ public class Main_Window extends javax.swing.JFrame {
                 .addComponent(GraficoBarraBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(GraficoTortaBtn)
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 300));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 170));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void ListarDadosBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListarDadosBtnActionPerformed
-        //instancia a janela ArrayListShow e coloca ela na posição da tela 550x300
-        c1.setLocation(550, 300);
+        //Mostra a janela Listar Dados
         c1.setVisible(true);
     }//GEN-LAST:event_ListarDadosBtnActionPerformed
 
     private void TabelaFreqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TabelaFreqBtnActionPerformed
-        c2.setLocation(550,300);
+        //Mostra a janela Da Tabela Frequencia
         c2.setVisible(true);
     }//GEN-LAST:event_TabelaFreqBtnActionPerformed
 
     private void GraficoBarraBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GraficoBarraBtnActionPerformed
-        c3.setLocation(550,300);
+        //Mostra a janela de Grafico em Barra
         c3.setVisible(true);
     }//GEN-LAST:event_GraficoBarraBtnActionPerformed
 
     private void GraficoTortaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GraficoTortaBtnActionPerformed
-        c4.setLocation(550,300);
+        //Mostra a janela de Grafico em Torta
         c4.setVisible(true);
     }//GEN-LAST:event_GraficoTortaBtnActionPerformed
 

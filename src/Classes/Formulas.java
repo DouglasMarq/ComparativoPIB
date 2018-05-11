@@ -95,7 +95,7 @@ public class Formulas {
           varianciadouble = (Double) (variancia[i] + varianciadouble);
           //System.out.println(i + "-" + nf.format(variancia[i]));
       }
-          System.out.println("Variancia: " + nf.format(varianciadouble));
+          //System.out.println("Variancia: " + nf.format(varianciadouble));
     }
     
     public void Desviopadrao(){
@@ -110,6 +110,6 @@ public class Formulas {
           desviodouble = (Double) (desvio[i] + desviodouble);
       }
           desvioPadrao = Math.sqrt(desviodouble);
-          System.out.println("Desvio Padrão: " + nf.format(desvioPadrao));
+          //System.out.println("Desvio Padrão: " + nf.format(desvioPadrao));
     }  
 }

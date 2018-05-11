@@ -10,6 +10,11 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
+/**
+ *
+ * @author Douglas
+ */
+
 public class ArrayListShow extends javax.swing.JFrame {
 
     Ler_Arquivo c1 = new Ler_Arquivo();
