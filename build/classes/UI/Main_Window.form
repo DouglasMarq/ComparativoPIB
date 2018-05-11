@@ -29,7 +29,7 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="0" width="170" height="170"/>
+          <AbsoluteConstraints x="0" y="0" width="330" height="90"/>
         </Constraint>
       </Constraints>
 
@@ -41,7 +41,10 @@
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="ListarDadosBtn" max="32767" attributes="0"/>
                       <Component id="TabelaFreqBtn" max="32767" attributes="0"/>
-                      <Component id="GraficoBarraBtn" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="GraficoBarraBtn" pref="142" max="32767" attributes="0"/>
                       <Component id="GraficoTortaBtn" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="38" max="32767" attributes="0"/>
@@ -52,14 +55,16 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="ListarDadosBtn" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="ListarDadosBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="GraficoBarraBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="TabelaFreqBtn" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="GraficoBarraBtn" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="GraficoTortaBtn" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="38" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="TabelaFreqBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="GraficoTortaBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="24" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
