@@ -12,9 +12,8 @@ public class Main_Class {
         c4.graficobarra();
         c4.graficotorta();
         
-        //Cria a janela Main_Window e coloca ela na posição 750x350
+        //Cria a janela Main_Window
         Main_Window JanelaPrincipal = new Main_Window();
-        JanelaPrincipal.setLocation(750, 350);
         JanelaPrincipal.setVisible(true);
     }
     
