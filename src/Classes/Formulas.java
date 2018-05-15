@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 
 public class Formulas {
-    
+
     Ler_Arquivo c1 = new Ler_Arquivo();
     private ArrayList<String> ListaPIB = c1.getdados2();
     private ArrayList<String> ListaPIB2 = new ArrayList<String>();
@@ -13,12 +13,15 @@ public class Formulas {
     private int i;
     private Double[] variancia = new Double[50];
     private Double[] desvio = new Double[50];
+    private Double[] desvioMedio = new Double[50];
     private double MedianaPib;
     private double MediaPib;
     private double SomaPib;
+    private double desvioM;
     private double varianciadouble;
     private double desvioPadrao;
     private double desviodouble;
+    private double coeficienteVariacao;
     private boolean calcular = true;
     NumberFormat nf = NumberFormat.getInstance();
     
@@ -33,6 +36,14 @@ public class Formulas {
     public double getMedianaPib(){
         return MedianaPib;
     }
+
+    public Double[] getDesvioMedio() {
+        return desvioMedio;
+    }
+
+    public double getDesvioM() {
+        return desvioM;
+    }
     
     public double getVariancia(){
         return varianciadouble;
@@ -40,6 +51,10 @@ public class Formulas {
     
     public double getDesvioPadrao(){
         return desvioPadrao;
+    }
+    
+    public double getCoeficienteVariacao() {
+        return coeficienteVariacao;
     }
     
     public ArrayList<String> getListaPIB2(){
@@ -67,6 +82,7 @@ public class Formulas {
       }
       MediaPib = 0.0;
       MediaPib = SomaPib/50;
+      
       for(i=0;i<ListaPIB.size();i++){
           String[] soma2 = ListaPIB.get(i).split(";");
           variancia[i] =  Math.pow((Double.parseDouble(soma2[2]) - MediaPib),2) / (5);
@@ -77,6 +93,18 @@ public class Formulas {
         //medianapib
             String[] div = ListaPIB.get(24).split(";");
             MedianaPib = Double.parseDouble(div[2]);
+    }
+    
+    public void DesvioMedio() {
+      c1.lerarquivocsv();
+      for(i=0;i<ListaPIB.size();i++){
+          String[] soma2 = ListaPIB.get(i).split(";");
+          desvioMedio[i] = (Double.parseDouble(soma2[2]) - MediaPib) / ListaPIB.size();
+      }
+      for(i=0;i<ListaPIB.size();i++){
+         desvioM = (Double) (desvioM + desvioMedio[i]);
+   }
+        System.out.println(desvioM);
     }
     
     public void Variancia(){
@@ -112,4 +140,10 @@ public class Formulas {
           desvioPadrao = Math.sqrt(desviodouble);
           //System.out.println("Desvio Padrão: " + nf.format(desvioPadrao));
     }  
+    
+    public void CoefienteVariacao() {
+        coeficienteVariacao = (Double) (desvioPadrao / MediaPib) * 100;
+    }
+
+    
 }

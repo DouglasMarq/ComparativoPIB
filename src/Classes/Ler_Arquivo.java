@@ -92,7 +92,7 @@ public class Ler_Arquivo {
     
     public void lerpibtabela(){
         //abre o arquivo no mesmo diretorio/cria o arquivo
-        File arquivoCSV = new File(getClass().getResource("PIB(1).csv").getFile());
+        File arquivoCSV = new File(getClass().getResource("PIB.csv").getFile());
         //Tenta ler o arquivo e capturar algum erro
         try{
             //cria scanner para ler arquivo
