@@ -7,20 +7,13 @@ public class Main_Class {
 
     public static void main(String[] args) {
         
-        //inicializa a leitura do arquivo e já prepara a lista 1, 2 e 3
-        Ler_Arquivo c1 = new Ler_Arquivo();
-        TabelaFrequencia c2 = new TabelaFrequencia();
-        Formulas c3 = new Formulas();
+        //Tenta criar os graficos antes de o Swing aparecer.
+        Graficos c4 = new Graficos();
+        c4.graficobarra();
+        c4.graficotorta();
         
-        c3.Desviopadrao();
-        //c3.Medias();
-        //c2.Frac();
-        c3.Variancia();
-        c1.lerpib();
-        
-        //Cria a janela Main_Window e coloca ela na posição 750x350
+        //Cria a janela Main_Window
         Main_Window JanelaPrincipal = new Main_Window();
-        JanelaPrincipal.setLocation(750, 350);
         JanelaPrincipal.setVisible(true);
     }
     
