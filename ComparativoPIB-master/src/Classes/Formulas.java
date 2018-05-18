@@ -97,6 +97,7 @@ public class Formulas {
     
     public void DesvioMedio() {
       c1.lerarquivocsv();
+      Medias();
       for(i=0;i<ListaPIB.size();i++){
           String[] soma2 = ListaPIB.get(i).split(";");
           desvioMedio[i] = (Double.parseDouble(soma2[2]) - MediaPib) / ListaPIB.size();
@@ -104,7 +105,7 @@ public class Formulas {
       for(i=0;i<ListaPIB.size();i++){
          desvioM = (Double) (desvioM + desvioMedio[i]);
    }
-        System.out.println(desvioM);
+        //System.out.println(desvioM);
     }
     
     public void Variancia(){
@@ -142,7 +143,11 @@ public class Formulas {
     }  
     
     public void CoefienteVariacao() {
+        Medias();
+        Desviopadrao();
+        
         coeficienteVariacao = (Double) (desvioPadrao / MediaPib) * 100;
+        System.out.println(coeficienteVariacao);
     }
 
     

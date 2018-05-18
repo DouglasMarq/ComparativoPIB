@@ -12,6 +12,9 @@ public class Main_Class {
         c4.graficobarra();
         c4.graficotorta();
         
+        
+        Formulas test = new Formulas();
+        //test.DesvioMedio();
         //Cria a janela Main_Window
         Main_Window JanelaPrincipal = new Main_Window();
         JanelaPrincipal.setVisible(true);

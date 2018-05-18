@@ -35,10 +35,13 @@ public class jTabelaFreq extends javax.swing.JFrame {
     public void FormulasParaTabela(){
         c3.Variancia();
         c3.Desviopadrao();
+        c3.Medias();
+        c3.DesvioMedio();
         MediaTxtField.setText(String.valueOf(nf.format(c3.getMediaPib())));
         MedianaTxtField.setText(String.valueOf(nf.format(c3.getMedianaPib())));
         DesvioPadraoTxtField.setText(String.valueOf(nf.format(c3.getDesvioPadrao())));
         VarianciaTxtField.setText(String.valueOf(nf.format(c3.getVariancia())));
+        DesvioMedioTxtField.setText(String.valueOf(nf.format(c3.getDesvioM())));
     }
     
     public void ArrayParaTabela(){
@@ -188,6 +191,11 @@ public class jTabelaFreq extends javax.swing.JFrame {
         DesvioPadraoTxtField.setEditable(false);
 
         DesvioMedioTxtField.setEditable(false);
+        DesvioMedioTxtField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DesvioMedioTxtFieldActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -263,6 +271,10 @@ public class jTabelaFreq extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void DesvioMedioTxtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesvioMedioTxtFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DesvioMedioTxtFieldActionPerformed
 
     /**
      * @param args the command line arguments
