@@ -147,7 +147,6 @@ public class Formulas {
         Desviopadrao();
         
         coeficienteVariacao = (Double) (desvioPadrao / MediaPib) * 100;
-        System.out.println(coeficienteVariacao);
     }
 
     

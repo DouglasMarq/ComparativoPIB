@@ -37,11 +37,13 @@ public class jTabelaFreq extends javax.swing.JFrame {
         c3.Desviopadrao();
         c3.Medias();
         c3.DesvioMedio();
+        c3.CoefienteVariacao();
         MediaTxtField.setText(String.valueOf(nf.format(c3.getMediaPib())));
         MedianaTxtField.setText(String.valueOf(nf.format(c3.getMedianaPib())));
         DesvioPadraoTxtField.setText(String.valueOf(nf.format(c3.getDesvioPadrao())));
         VarianciaTxtField.setText(String.valueOf(nf.format(c3.getVariancia())));
-        DesvioMedioTxtField.setText(String.valueOf(nf.format(c3.getDesvioM())));
+        DesvioMedioTxtField.setText(String.valueOf(c3.getDesvioM()));
+        CoeVariTxtField.setText(String.valueOf(nf.format(c3.getCoeficienteVariacao())));
     }
     
     public void ArrayParaTabela(){
@@ -130,6 +132,8 @@ public class jTabelaFreq extends javax.swing.JFrame {
         VarianciaTxtField = new javax.swing.JTextField();
         DesvioPadraoTxtField = new javax.swing.JTextField();
         DesvioMedioTxtField = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        CoeVariTxtField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -197,6 +201,10 @@ public class jTabelaFreq extends javax.swing.JFrame {
             }
         });
 
+        jLabel8.setText("Coeficiente de Variância:");
+
+        CoeVariTxtField.setEditable(false);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -234,7 +242,11 @@ public class jTabelaFreq extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(DesvioPadraoTxtField, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
-                                    .addComponent(VarianciaTxtField))))))
+                                    .addComponent(VarianciaTxtField))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CoeVariTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -255,7 +267,9 @@ public class jTabelaFreq extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(ModaTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
-                    .addComponent(VarianciaTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(VarianciaTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8)
+                    .addComponent(CoeVariTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -312,6 +326,7 @@ public class jTabelaFreq extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField CoeVariTxtField;
     private javax.swing.JTextField DesvioMedioTxtField;
     private javax.swing.JTextField DesvioPadraoTxtField;
     private javax.swing.JTextField MediaTxtField;
@@ -325,6 +340,7 @@ public class jTabelaFreq extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
