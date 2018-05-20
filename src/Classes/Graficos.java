@@ -24,7 +24,7 @@ public class Graficos {
     private ArrayList<String> ListaPais = c7.getListaPais();
     
     
-    
+    //Criação do gráfico de barra
     public void graficobarra(){
         c7.Medias();
         c7.Paises();
@@ -50,7 +50,7 @@ public class Graficos {
             Logger.getLogger(Graficos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+    //Criação do gráfico de setores.
     public void graficotorta(){
         c7.Medias();
         c7.Paises();
