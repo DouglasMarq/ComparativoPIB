@@ -1,5 +1,7 @@
 package UI;
 
+import Classes.Graficos;
+
 /**
  *
  * @author Douglas
@@ -10,6 +12,10 @@ public class GraficoTorta extends javax.swing.JFrame {
      * Creates new form GraficoTorta
      */
     public GraficoTorta() {
+        //Tenta criar os graficos antes de o Swing inicializar, para evitar problemas futuros.
+        Graficos c1 = new Graficos();
+        c1.graficobarra();
+        c1.graficotorta();
         initComponents();
     }
 

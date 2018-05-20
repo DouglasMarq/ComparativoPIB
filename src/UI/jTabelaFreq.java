@@ -14,7 +14,7 @@ public class jTabelaFreq extends javax.swing.JFrame {
     Ler_Arquivo c1 = new Ler_Arquivo();
     TabelaFrequencia c2 = new TabelaFrequencia();
     Formulas c3 = new Formulas();
-    private ArrayList<String> ListaPaisMoeda = c1.getdados3();
+    private ArrayList<String> ListaPaisMoeda = c1.getListaCSV();
     private ArrayList<String> Fi = c2.getFi();   
     private ArrayList<String> FacTab = c2.getFac();
     private ArrayList<Float> FracTab = c2.getFrac();
@@ -59,7 +59,7 @@ public class jTabelaFreq extends javax.swing.JFrame {
         jTable1.getColumnModel().getColumn(8).setMinWidth(140);
         jTable1.getColumnModel().getColumn(9).setMinWidth(250);
         
-        c1.lerpibtabela();
+        c1.lerarquivocsv();
         c2.Fi();
         c2.Fac();
         c2.Fr();
@@ -136,6 +136,7 @@ public class jTabelaFreq extends javax.swing.JFrame {
         CoeVariTxtField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(

@@ -4,7 +4,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -21,7 +20,7 @@ public class Graficos {
     Formulas c7 = new Formulas();
     private double SomaPib;
     private int i;
-    private ArrayList<String> ListaPIB2 = c7.getListaPIB2();
+    private ArrayList<String> ListaPIBAuxiliar = c7.getListaPIBAuxiliar();
     private ArrayList<String> ListaPais = c7.getListaPais();
     
     
@@ -30,8 +29,8 @@ public class Graficos {
         c7.Medias();
         c7.Paises();
         DefaultCategoryDataset ds = new DefaultCategoryDataset();
-        for(i = 0;i<ListaPIB2.size();i++){
-            SomaPib = Double.parseDouble(ListaPIB2.get(i));
+        for(i = 0;i<ListaPIBAuxiliar.size();i++){
+            SomaPib = Double.parseDouble(ListaPIBAuxiliar.get(i));
         ds.addValue(SomaPib, "PIB Total", ListaPais.get(i));
         }
         
@@ -40,6 +39,7 @@ public class Graficos {
         
         OutputStream arquivo = null;
         try {
+            //arquivo gerado na pasta src do netbeans, indo para a pasta IMG
             arquivo = new FileOutputStream("src\\IMG\\graficobarra.png");
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Graficos.class.getName()).log(Level.SEVERE, null, ex);
@@ -55,8 +55,8 @@ public class Graficos {
         c7.Medias();
         c7.Paises();
         DefaultPieDataset dspie = new DefaultPieDataset();
-        for(i = 0;i<ListaPIB2.size();i++){
-            SomaPib = Double.parseDouble(ListaPIB2.get(i));
+        for(i = 0;i<ListaPIBAuxiliar.size();i++){
+            SomaPib = Double.parseDouble(ListaPIBAuxiliar.get(i));
         dspie.setValue(ListaPais.get(i), SomaPib);
         }
         
@@ -65,6 +65,7 @@ public class Graficos {
         
         OutputStream arquivo = null;
         try {
+            //arquivo gerado na pasta src do netbeans, indo para a pasta IMG
             arquivo = new FileOutputStream("src\\IMG\\graficotorta.png");
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Graficos.class.getName()).log(Level.SEVERE, null, ex);

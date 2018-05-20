@@ -1,7 +1,6 @@
 package Classes;
 
 import java.util.ArrayList;
-import UI.jTabelaFreq;
 
 public class TabelaFrequencia {
 
@@ -11,7 +10,7 @@ public class TabelaFrequencia {
     private ArrayList<String> FacArray = new ArrayList<String>();
     private ArrayList<Float> FRArray = new ArrayList<Float>();  
     private float[] FrDados = new float[51];
-    private ArrayList<String>ListaCSV = c2.getdados2();
+    private ArrayList<String>ListaCSV = c2.getListaCSV();
     private ArrayList<Float>FracArray = new ArrayList<Float>();
     private ArrayList<Double>XXBarrado = new ArrayList<Double>();
     private ArrayList<Double>XXBarradoVezes = new ArrayList<Double>();
@@ -26,30 +25,37 @@ public class TabelaFrequencia {
     public ArrayList<String> getFi(){
         return FiArray;
     }
+    
     //transfere essa arraylist para a outra classe
     public ArrayList<String> getFac(){
         return FacArray;
     }
+    
     //transfere esse vetor para a outra classe
     public float[] getFr(){
         return FrDados;
     }
+    
     //transfere essa arraylist para a outra classe
     public ArrayList<Float> getFrac(){
         return FracArray;
     }
+    
     //transfere essa arraylist para a outra classe
     public ArrayList<Double> getXXBarrado(){
         return XXBarrado;
     }
+    
     //transfere essa arraylist para a outra classe
     public ArrayList<Double> getXXBarradoVezes(){
         return XXBarradoVezes;
     }
+    
     //transfere essa arraylist para a outra classe
     public ArrayList<Double> getXXBarradoVezesAoQuadrado(){
         return XXBarradoVezesAoQuadrado;
     }
+    
     //Formula do Fi
     public void Fi(){
         for(i=0;i<51;i++){
@@ -57,14 +63,16 @@ public class TabelaFrequencia {
         }
         FiArray.add("50");
     }
+    
     //Formula do Fac
     public void Fac(){   
         for(i=1;i<51;i++){
             FacArray.add(String.valueOf(i));
         }
     }
+    
     //Formula do Fr
-   public void Fr(){
+    public void Fr(){
         Fi();
         for(i=0;i<51;i++){
             FRArray.add(Float.parseFloat(FiArray.get(i)));
@@ -73,8 +81,9 @@ public class TabelaFrequencia {
             FrDados[i] = FloatDiv;
         }
     }
-   //Formula do Frac
-   public void Frac(){
+    
+    //Formula do Frac
+    public void Frac(){
        Fr();
        FracArray.clear();
        FracArray.add(ensurement);
@@ -86,8 +95,9 @@ public class TabelaFrequencia {
            }
        }
    }
-   //Formula do X-XBarrado
-   public void XXBarrado(){
+    
+    //Formula do X-XBarrado
+    public void XXBarrado(){
        c1.Medias();
        c2.lerarquivocsv();
        MediaPib = c1.getMediaPib();
@@ -98,8 +108,9 @@ public class TabelaFrequencia {
            XXBarrado.add(MediaPib);
        }
    }
-   //Formula do X-XBarrado*fi
-   public void XXBarradoVezes(){
+    
+    //Formula do X-XBarrado*fi
+    public void XXBarradoVezes(){
        c1.Medias();
        c2.lerarquivocsv();
        MediaPib = c1.getMediaPib();
@@ -111,8 +122,9 @@ public class TabelaFrequencia {
            XXBarradoVezes.add(MediaPib);
        }
    }
-   //Formula do X-XBarrado²*Fi
-   public void XXBarradoVezesAoQuadrado(){
+    
+    //Formula do X-XBarrado²*Fi
+    public void XXBarradoVezesAoQuadrado(){
        c1.Medias();
        c2.lerarquivocsv();
        MediaPib = c1.getMediaPib();

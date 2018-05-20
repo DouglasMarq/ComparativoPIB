@@ -1,5 +1,7 @@
 package UI;
 
+import Classes.Graficos;
+
 /**
  *
  * @author Douglas
@@ -8,6 +10,10 @@ public class GraficoBarra extends javax.swing.JFrame {
 
     
     public GraficoBarra() {
+        //Tenta criar os graficos antes de o Swing inicializar, para evitar problemas futuros.
+        Graficos c1 = new Graficos();
+        c1.graficobarra();
+        c1.graficotorta();
         initComponents();
     }
 
@@ -24,7 +30,7 @@ public class GraficoBarra extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1024, 800));
+        setPreferredSize(new java.awt.Dimension(850, 850));
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);

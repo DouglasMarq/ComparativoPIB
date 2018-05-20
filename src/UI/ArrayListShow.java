@@ -18,8 +18,8 @@ import javax.swing.table.DefaultTableModel;
 public class ArrayListShow extends javax.swing.JFrame {
 
     Ler_Arquivo c1 = new Ler_Arquivo();
-    private ArrayList<String> ListaCSV = c1.getdados2();
-    private ArrayList<String> ListaCSV2 = c1.getdados4();
+    private ArrayList<String> ListaCSV = c1.getListaCSV();
+    private ArrayList<String> ListaCSVAuxiliar = c1.getListaCSVAuxiliar();
     private int i;
     NumberFormat nf = NumberFormat.getInstance();
     
@@ -30,7 +30,7 @@ public class ArrayListShow extends javax.swing.JFrame {
     }
     
     public void ArrayParaTabela(){
-        c1.lerpib();
+        c1.lerarquivocsv();
         //Cria objeto vetor Data
         Object Data[] = new Object[3];
         //Cria o modelo da tabela
@@ -42,7 +42,7 @@ public class ArrayListShow extends javax.swing.JFrame {
             //Adiciona a coluna 2 a moeda utilizada
             Data[1] = addTabela[1];
             //Adiciona a coluna 3 o PIB
-            Data[2] = nf.format(Double.parseDouble(ListaCSV2.get(i)));
+            Data[2] = nf.format(Double.parseDouble(ListaCSVAuxiliar.get(i)));
             //Coloca na tabela
             model.addRow(Data);
         }
