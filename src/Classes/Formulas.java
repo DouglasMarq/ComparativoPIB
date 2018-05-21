@@ -72,6 +72,7 @@ public class Formulas {
         }
     }
     
+    // Calcula as medias dos dados e a Mediana
     public void Medias(){
         c1.lerarquivocsv();
         SomaPib = 0.0;
@@ -91,6 +92,7 @@ public class Formulas {
         MedianaPib = Double.parseDouble(div[2]);
     }
     
+    // Calcula o Desvio Medio 
     public void DesvioMedio() {
         c1.lerarquivocsv();
         Medias();
@@ -103,6 +105,7 @@ public class Formulas {
         }
    }
     
+    // Calcula Variancia 
     public void Variancia(){
         c1.lerarquivocsv();
         for(i=0; i < ListaPIB.size();i++){
@@ -118,6 +121,7 @@ public class Formulas {
         }
     }
     
+    // Calcula o Desvio Padrão
     public void Desviopadrao(){
         c1.lerarquivocsv();
         Medias();
@@ -131,6 +135,7 @@ public class Formulas {
         DesvioPadrao = Math.sqrt(DesvioDouble);
     }  
     
+    // Calcula o coeficiente de variação 
     public void CoefienteVariacao() {
         Medias();
         Desviopadrao();
