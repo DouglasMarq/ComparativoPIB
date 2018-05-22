@@ -29,7 +29,7 @@ public class Ler_Arquivo {
     public void lerarquivocsv(){
         //abre o arquivo no mesmo diretorio/cria o arquivo
         ListaCSV.clear();
-        File arquivoCSV = new File(getClass().getResource("PIB3.csv").getFile());
+        File arquivoCSV = new File(getClass().getResource("PIB200.csv").getFile());
         //Tenta ler o arquivo e capturar algum erro
         try{
             //cria scanner para ler arquivo
@@ -47,7 +47,7 @@ public class Ler_Arquivo {
         
         for (i=0; i < ListaCSV.size();i++){
             String[] separator = ListaCSV.get(i).split(";");
-            lervalor[0] = separator[2];
+            lervalor[0] = separator[3];
             ListaCSVAuxiliar.add(lervalor[0]);
         }
     }

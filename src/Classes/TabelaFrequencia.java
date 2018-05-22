@@ -103,7 +103,7 @@ public class TabelaFrequencia {
        MediaPib = c1.getMediaPib();
        for(i=0;i<50;i++){
            String[] separador = ListaCSV.get(i).split(";");
-           MediaPib = Double.parseDouble(separador[2]) - MediaPib;
+           MediaPib = Double.parseDouble(separador[3]) - MediaPib;
            MediaPib = Math.abs(MediaPib);
            XXBarrado.add(MediaPib);
        }
@@ -116,7 +116,7 @@ public class TabelaFrequencia {
        MediaPib = c1.getMediaPib();
        for(i=0;i<50;i++){
            String[] separador = ListaCSV.get(i).split(";");
-           MediaPib = Double.parseDouble(separador[2]) - MediaPib;
+           MediaPib = Double.parseDouble(separador[3]) - MediaPib;
            MediaPib = Math.abs(MediaPib);
            MediaPib = MediaPib*Double.parseDouble(FiArray.get(i));
            XXBarradoVezes.add(MediaPib);
@@ -130,7 +130,7 @@ public class TabelaFrequencia {
        MediaPib = c1.getMediaPib();
        for(i=0;i<50;i++){
            String[] separador = ListaCSV.get(i).split(";");
-           MediaPib = Double.parseDouble(separador[2]) - MediaPib;
+           MediaPib = Double.parseDouble(separador[3]) - MediaPib;
            MediaPib = Math.abs(MediaPib);
            AoQuadrado = Math.pow(MediaPib,2);
            AoQuadrado = AoQuadrado*Double.parseDouble(FiArray.get(i));

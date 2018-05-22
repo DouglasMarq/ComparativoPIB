@@ -78,9 +78,9 @@ public class jTabelaFreq extends javax.swing.JFrame {
             String[] addTabela = ListaPaisMoeda.get(i).split(";");
             //Coleta informações para a tabela
             Data[0] = addTabela[0];
-            Data[1] = nf.format(Double.parseDouble(addTabela[2]));
+            Data[1] = nf.format(Double.parseDouble(addTabela[3]));
             Data[2] = Fi.get(i);
-            Data[3] = nf.format(Double.parseDouble(addTabela[2]));
+            Data[3] = nf.format(Double.parseDouble(addTabela[3]));
             Data[4] = FacTab.get(i);
             Data[5] = FrTab[i];
             Data[6] = FracTab.get(i);

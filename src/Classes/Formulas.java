@@ -78,18 +78,18 @@ public class Formulas {
         SomaPib = 0.0;
         for(i=0;i<ListaPIB.size();i++){
           String[] PibTotal = ListaPIB.get(i).split(";");
-          SomaPib = SomaPib+Double.parseDouble(PibTotal[2]);
+          SomaPib = SomaPib+Double.parseDouble(PibTotal[3]);
         }
         MediaPib = 0.0;
         MediaPib = SomaPib/ListaPIB.size();
         for(i=0;i<ListaPIB.size();i++){
           String[] soma2 = ListaPIB.get(i).split(";");
-          VarianciaVetor[i] =  Math.pow((Double.parseDouble(soma2[2]) - MediaPib),2) / (5);
-          ListaPIBAuxiliar.add(soma2[2]);
+          VarianciaVetor[i] =  Math.pow((Double.parseDouble(soma2[3]) - MediaPib),2) / (5);
+          ListaPIBAuxiliar.add(soma2[3]);
         }
         //medianapib
-        String[] div = ListaPIB.get(4).split(";");
-        MedianaPib = Double.parseDouble(div[2]);
+        String[] div = ListaPIB.get(24).split(";");
+        MedianaPib = Double.parseDouble(div[3]);
     }
     
     // Calcula o Desvio Medio 
@@ -98,7 +98,7 @@ public class Formulas {
         Medias();
         for(i=0;i<ListaPIB.size();i++){
             String[] soma2 = ListaPIB.get(i).split(";");
-            DesvioMedioVetor[i] = Math.abs((Double.parseDouble(soma2[2]) - MediaPib) / ListaPIB.size());
+            DesvioMedioVetor[i] = Math.abs((Double.parseDouble(soma2[3]) - MediaPib) / ListaPIB.size());
         }
         for(i=0;i<ListaPIB.size();i++){
             DesvioMedio = (Double) (DesvioMedio + DesvioMedioVetor[i]);
@@ -111,11 +111,11 @@ public class Formulas {
         Medias();
         for(i=0; i < ListaPIB.size();i++){
             String[] soma = ListaPIB.get(i).split(";");
-            SomaPib = Double.parseDouble(soma[2]) + SomaPib;
+            SomaPib = Double.parseDouble(soma[3]) + SomaPib;
         } 
         for(i=0;i<ListaPIB.size();i++){
             String[] soma2 = ListaPIB.get(i).split(";");
-            VarianciaVetor[i] =  Math.pow((Double.parseDouble(soma2[2]) - MediaPib),2) / ListaPIB.size();
+            VarianciaVetor[i] =  Math.pow((Double.parseDouble(soma2[3]) - MediaPib),2) / ListaPIB.size();
         }
         for(i=0;i<ListaPIB.size();i++){
             varianciadouble = (Double) (VarianciaVetor[i] + varianciadouble);
@@ -130,7 +130,7 @@ public class Formulas {
         Medias();
         for(i=0;i<ListaPIB.size();i++){
             String[] soma2 = ListaPIB.get(i).split(";");
-            DesvioVetor[i] =  Math.pow((Double.parseDouble(soma2[2]) - MediaPib),2) / 5;
+            DesvioVetor[i] =  Math.pow((Double.parseDouble(soma2[3]) - MediaPib),2) / 5;
         }
         for(i=0;i<ListaPIB.size();i++){
             DesvioDouble = (Double) (DesvioVetor[i] + DesvioDouble);

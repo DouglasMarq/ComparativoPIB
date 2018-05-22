@@ -44,7 +44,7 @@ public class ArrayListShow extends javax.swing.JFrame {
             //Adiciona a coluna 3 o PIB
             Data[2] = nf.format(Double.parseDouble(ListaCSVAuxiliar.get(i)));
             // Adiciona o Ano a coluna 4
-            Data[3] = addTabela[3];
+            Data[3] = addTabela[2];
             //Coloca na tabela
             model.addRow(Data);
         }
