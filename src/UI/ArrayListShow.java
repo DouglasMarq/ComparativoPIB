@@ -32,7 +32,7 @@ public class ArrayListShow extends javax.swing.JFrame {
     public void ArrayParaTabela(){
         c1.lerarquivocsv();
         //Cria objeto vetor Data
-        Object Data[] = new Object[3];
+        Object Data[] = new Object[4];
         //Cria o modelo da tabela
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         for(i=0; i<ListaCSV.size();i++){
@@ -43,6 +43,8 @@ public class ArrayListShow extends javax.swing.JFrame {
             Data[1] = addTabela[1];
             //Adiciona a coluna 3 o PIB
             Data[2] = nf.format(Double.parseDouble(ListaCSVAuxiliar.get(i)));
+            // Adiciona o Ano a coluna 4
+            Data[3] = addTabela[3];
             //Coloca na tabela
             model.addRow(Data);
         }
@@ -74,11 +76,11 @@ public class ArrayListShow extends javax.swing.JFrame {
 
             },
             new String [] {
-                "País", "Moeda Utilizado Dados", "Produto Interno Bruto"
+                "País", "Moeda Utilizado Dados", "Produto Interno Bruto", "Ano"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -91,6 +93,7 @@ public class ArrayListShow extends javax.swing.JFrame {
             jTable1.getColumnModel().getColumn(0).setResizable(false);
             jTable1.getColumnModel().getColumn(1).setResizable(false);
             jTable1.getColumnModel().getColumn(2).setResizable(false);
+            jTable1.getColumnModel().getColumn(3).setResizable(false);
         }
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

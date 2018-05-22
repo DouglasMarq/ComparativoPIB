@@ -29,7 +29,7 @@ public class Ler_Arquivo {
     public void lerarquivocsv(){
         //abre o arquivo no mesmo diretorio/cria o arquivo
         ListaCSV.clear();
-        File arquivoCSV = new File(getClass().getResource("PIB.csv").getFile());
+        File arquivoCSV = new File(getClass().getResource("PIB3.csv").getFile());
         //Tenta ler o arquivo e capturar algum erro
         try{
             //cria scanner para ler arquivo
