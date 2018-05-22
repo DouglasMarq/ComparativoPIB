@@ -1,7 +1,9 @@
 package Classes;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -12,6 +14,7 @@ public class Ler_Arquivo {
     private ArrayList<String> ListaCSV = new ArrayList<String>();
     private ArrayList<String> ListaCSVAuxiliar = new ArrayList<String>();
     private int i;
+    String csvArquivo = "C:\\Users\\Gabriel\\Documents\\GitHub\\ComparativoPIB\\src\\Classes\\PIB.csv";
     Double[] variancia = new Double[50];
     String[] lervalor = new String[50];
     NumberFormat nf = NumberFormat.getInstance();
@@ -29,11 +32,13 @@ public class Ler_Arquivo {
     public void lerarquivocsv(){
         //abre o arquivo no mesmo diretorio/cria o arquivo
         ListaCSV.clear();
-        File arquivoCSV = new File(getClass().getResource("PIB.csv").getFile());
+       
         //Tenta ler o arquivo e capturar algum erro
         try{
+            // Lê  o arquivo csv
+            BufferedReader conteudoCSV = new BufferedReader(new FileReader(csvArquivo));
             //cria scanner para ler arquivo
-            Scanner leitor = new Scanner(arquivoCSV);
+            Scanner leitor = new Scanner(conteudoCSV);
             //adiciona as linhas do arquivo CSV para a arraylist
             while(leitor.hasNextLine()){
                 //Adiciona proxima linha a lista
