@@ -18,6 +18,7 @@ public class TabelaFrequencia {
     private int i;
     private float ensurement = 2;
     private float FloatDiv;
+    private String[] Rol = new String[50];
     private double MediaPib;
     private double AoQuadrado;
     

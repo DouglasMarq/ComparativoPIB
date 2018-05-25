@@ -10,7 +10,7 @@ public class Main_Class {
         Graficos c4 = new Graficos();
         c4.graficobarra();
         c4.graficotorta();
-
+        
         //Cria a janela Main_Window
         Main_Window JanelaPrincipal = new Main_Window();
         JanelaPrincipal.setVisible(true);

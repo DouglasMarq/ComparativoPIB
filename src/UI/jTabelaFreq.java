@@ -34,10 +34,8 @@ public class jTabelaFreq extends javax.swing.JFrame {
     
     public void FormulasParaTabela(){
         c3.Variancia();
-        //c3.Desviopadrao();
         c3.Medias();
         c3.DesvioMedio();
-        c3.CoefienteVariacao();
         MediaTxtField.setText(String.valueOf(nf.format(c3.getMediaPib())));
         MedianaTxtField.setText(String.valueOf(nf.format(c3.getMedianaPib())));
         DesvioPadraoTxtField.setText(String.valueOf(nf.format(c3.getDesvioPadrao())));

@@ -19,7 +19,6 @@ public class Formulas {
     private double DesvioMedio;
     private double varianciadouble;
     private double DesvioPadrao;
-    private double DesvioDouble;
     private double CoeficienteVariacao;
     private boolean calcular = true;
     NumberFormat nf = NumberFormat.getInstance();
@@ -87,8 +86,8 @@ public class Formulas {
           VarianciaVetor[i] =  Math.pow((Double.parseDouble(soma2[3]) - MediaPib),2) / (5);
           ListaPIBAuxiliar.add(soma2[3]);
         }
-        //medianapib
-        String[] div = ListaPIB.get(24).split(";");
+        //medianapib -- Greece 192690813126
+        String[] div = ListaPIB.get(25).split(";");
         MedianaPib = Double.parseDouble(div[3]);
     }
     
@@ -105,7 +104,7 @@ public class Formulas {
         }
    }
     
-    // Calcula Variancia 
+    // Calcula Variancia/desvio padrao/coeficiente variação
     public void Variancia(){
         c1.lerarquivocsv();
         Medias();
@@ -122,26 +121,5 @@ public class Formulas {
         }
         DesvioPadrao = Math.sqrt(varianciadouble);
         CoeficienteVariacao = (DesvioPadrao / MediaPib) * 100;
-    }
-    
-    // Calcula o Desvio Padrão
-    /*public void Desviopadrao(){
-        c1.lerarquivocsv();
-        Medias();
-        for(i=0;i<ListaPIB.size();i++){
-            String[] soma2 = ListaPIB.get(i).split(";");
-            DesvioVetor[i] =  Math.pow((Double.parseDouble(soma2[3]) - MediaPib),2) / 5;
-        }
-        for(i=0;i<ListaPIB.size();i++){
-            DesvioDouble = (Double) (DesvioVetor[i] + DesvioDouble);
-        }
-        DesvioPadrao = Math.sqrt(DesvioDouble);
-    }*/  
-    
-    // Calcula o coeficiente de variação 
-    public void CoefienteVariacao() {
-        Medias();
-        //Desviopadrao();
-        //CoeficienteVariacao = (Double) (DesvioPadrao / MediaPib) * 100;
     }
 }
